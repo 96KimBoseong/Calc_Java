@@ -2,43 +2,19 @@ package com.exaple;
 
 public class Calculator {
 
-    private final Add add;
-    private final Subtract  subtract;
-    private final Multiply multiply;
-    private final Divide divide;
-    private final Remainder remainder;
-
+    private AbstractOperation abstractOperation;
     public Calculator(
-            Add add,
-            Subtract subtract,
-            Multiply multiply,
-            Divide divide,
-            Remainder remainder
+        AbstractOperation abstractOperation
     ) {
-        this.add = add;
-        this.subtract = subtract;
-        this.multiply = multiply;
-        this.divide = divide;
-        this.remainder = remainder;
-
+        this.abstractOperation = abstractOperation;
+    }
+    public void setAbstractOperation(AbstractOperation abstractOperation) {
+        this.abstractOperation = abstractOperation;
     }
 
-    public double calculate(String operator , int firstNumber, int secondNumber) {
+    public double calculate( int firstNumber, int secondNumber) {
         double result = 0;
 
-
-
-        if (operator.equals("+")) {
-            result = add.add(firstNumber, secondNumber);
-        } else if (operator.equals("-")) {
-            result = subtract.subtract(firstNumber, secondNumber);
-        } else if (operator.equals("*")) {
-            result = multiply.multiply(firstNumber, secondNumber);
-        } else if (operator.equals("/")) {
-            result =  divide.divide(firstNumber, secondNumber);
-        }else if (operator.equals("%")) {
-            result = remainder.remainder(firstNumber, secondNumber);
-        }
-        return result;
+        return result = abstractOperation.operate(firstNumber, secondNumber);
     }
 }
