@@ -7,5 +7,6 @@ public class Main {
         System.out.println(calculator.calculate("-",10,20));
         System.out.println(calculator.calculate("*",10,20));
         System.out.println(calculator.calculate("/",10,20));
+        System.out.println(calculator.calculate("%",10,3));
     }
 }

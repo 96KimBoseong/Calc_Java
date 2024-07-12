@@ -10,7 +10,9 @@ public class Calculator {
         } else if (operator.equals("*")) {
             result = firstNumber * secondNumber;
         } else if (operator.equals("/")) {
-            result = firstNumber / secondNumber;
+            result = (double) firstNumber / secondNumber;
+        }else if (operator.equals("%")) {
+            result = (double) firstNumber % secondNumber;
         }
         return result;
     }
