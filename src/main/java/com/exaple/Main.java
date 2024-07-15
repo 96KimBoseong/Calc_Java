@@ -1,7 +1,9 @@
 package com.exaple;
 
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws OurBadException {
         Calculator calculator = new Calculator(new Add());
         System.out.println(calculator.calculate(10, 20));
         Calculator calculator2 = new Calculator(new Subtract());
