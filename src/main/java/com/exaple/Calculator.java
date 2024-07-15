@@ -1,8 +1,11 @@
 package com.exaple;
 
 public class Calculator {
-
+    private int firstNumber;
+    private int secondNumber;
     private AbstractOperation abstractOperation;
+    public Calculator(){}
+
     public Calculator(
         AbstractOperation abstractOperation
     ) {
@@ -12,11 +15,21 @@ public class Calculator {
         this.abstractOperation = abstractOperation;
     }
 
-    public double calculate( int firstNumber, int secondNumber) throws OurBadException {
-        double result = 0;
-        if (firstNumber == 0 && secondNumber == 0 ) {
-            throw new OurBadException();
-        }
-        return result = abstractOperation.operate(firstNumber, secondNumber);
+    public void setFirstNumber(int firstNumber) {
+        this.firstNumber = firstNumber;
     }
+
+    public void setSecondNumber(int secondNumber) {
+        this.secondNumber = secondNumber;
+    }
+
+    public double calculate() throws BadInputException {
+        double result = 0;
+        result = abstractOperation.operate(this.firstNumber, this.secondNumber);
+        return result;
+    }
+
+
+
+
 }
